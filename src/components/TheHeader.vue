@@ -2,8 +2,9 @@
   <header>
     <h5>Soccer Bets</h5>
 
-    <router-link to="/login">Login</router-link>
-
+    <router-link to="/login">
+      <button>LOGIN</button>
+    </router-link>
     <button
       id="btnTeam"
       :class="[isPressed ? 'pressed' : 'notPressed']"
