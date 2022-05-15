@@ -1,41 +1,30 @@
 <template>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css"
-  />
+  <div class="top">
+  </div>
   <div class="container">
-    <form>
+    <form class="form">
       <fieldset>
-        <legend>Login</legend>
-        <label for="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          placeholder="Username"
-          v-model="username"
-        />
+        <img src="../assets/1.png" alt="HeNan" id="logo">
+        <label for="username"></label>
+        <input type="text" id="username" placeholder=" &nbsp;&nbsp;Username" v-model="username" />
         <br />
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="passsword"
-          placeholder="Password"
-          v-model="password"
-        />
+        <label for="password"></label>
+        <input type="password" id="password" placeholder=" &nbsp;&nbsp;Password" v-model="password" />
         <br />
-        <button class="primary" @click="checkCredentials($event)">Login</button>
-        <button class="primary" id="registerBtn" @click="goToRegister($event)">
-          Register
-        </button>
+        <button class="primary" @click="goToLogin($event)" id="loginButton">Login</button>
+        <a href="#" id="fotgotten">Forgotten password</a>
+        <div class="bottom"></div>
+        <button class="primary" @click="goToRegister($event)" id="registerButton">Register</button>
       </fieldset>
     </form>
-    <p>{{ feedback }}</p>
-    <p>Feedback...</p>
-    <ul>
-      <li v-for="user in users" :key="user.name">
-        <a @click="changeUser(user.name)"> {{ user.name }} </a>
-      </li>
-    </ul>
+  </div>
+  <div class="footer">
+    <div id="leftImg">
+      <img src="../assets/河南师范大学.png" alt="">
+    </div>
+    <div id="rightImg">
+      <img src="../assets/logo.svg" alt="">
+    </div>
   </div>
 </template>
 
@@ -79,13 +68,105 @@ export default {
 </script>
 
 <style scoped>
+#logo{
+  margin-bottom: 30px;
+}
+#leftImg{
+  /* background-color: black; */
+  height: 40px;
+  width: 20%;
+  float: left;
+}
+#leftImg img{
+  width: 65%;
+  opacity: 0.7;
+  
+}
+#rightImg img{
+  width:65%;
+}
+#rightImg{
+  /* background-color: blue; */
+  height: 40px;
+  width: 20%;
+  float: right;
+}
+.top,.footer{
+  height: 60px;
+  background-color: aqua;
+}
+.footer{
+
+}
 .container {
-  margin-top: 10%;
+  border: 1px solid black;
+  width: 400px;
+  height: 500px;
+  /* background-color: aqua; */
+  border-radius: 60px;
+  margin: 3% auto;
 }
-.primary {
-  width: 25%;
+
+.form {
+  /* padding: 40px 35px; */
+  display: block;
+  margin: 40px auto;
 }
-#registerBtn {
-  margin-left: 30%;
+
+#username {
+  border-radius: 20px;
+  margin-bottom: 40px;
+  width: 300px;
+  height: 40px;
+  margin-left: 35px;
+  box-shadow: 3px 3px 3px grey;
+}
+
+#password {
+  border-radius: 20px;
+  margin-bottom: 40px;
+  width: 300px;
+  height: 40px;
+  margin-left: 35px;
+  box-shadow: 3px 3px 3px grey;
+}
+
+#loginButton {
+  border-radius: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 40px;
+  background-color: cadetblue;
+  margin-left: 35px;
+}
+#registerButton{
+  border-radius: 20px;
+  margin-bottom: 40px;
+  width: 200px;
+  height: 40px;
+  background-color:rgb(63, 218, 63);
+  margin-left: 75px;
+}
+#fotgotten{
+    margin-left: 90px;
+    margin-bottom: 20px;
+}
+input{
+  margin: 0 auto;
+}
+img{
+  width: 300px;
+  height: 50px;
+  margin-bottom: 5px;
+  margin-left: 35px;
+}
+.bottom{
+  /* background-color: black; */
+  width: 300px;
+  height: 2px;
+  margin-left: 35px;
+  margin-top: 20px;
+  border-top: 2px solid black;
+  margin-bottom: 20px;
 }
 </style>
