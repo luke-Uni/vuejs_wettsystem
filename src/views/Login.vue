@@ -1,41 +1,30 @@
 <template>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css"
-  />
+  <div class="top">
+  </div>
   <div class="container">
-    <form>
+    <form class="form">
       <fieldset>
-        <legend>Login</legend>
-        <label for="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          placeholder="Username"
-          v-model="username"
-        />
+        <img src="../assets/1.png" alt="HeNan" id="logo">
+        <label for="username"></label>
+        <input type="text" id="username" placeholder=" &nbsp;&nbsp;Username" v-model="username" />
         <br />
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="passsword"
-          placeholder="Password"
-          v-model="password"
-        />
+        <label for="password"></label>
+        <input type="password" id="password" placeholder=" &nbsp;&nbsp;Password" v-model="password" />
         <br />
-        <button class="primary" @click="checkCredentials($event)">Login</button>
-        <button class="primary" id="registerBtn" @click="goToRegister($event)">
-          Register
-        </button>
+        <button class="primary" @click="goToLogin($event)" id="loginButton">Log In</button>
+        <a href="#" id="fotgotten">Forgotten password</a>
+        <div class="bottom"></div>
+        <button class="primary" @click="goToRegister($event)" id="registerButton">Create new account</button>
       </fieldset>
     </form>
-    <p>{{ feedback }}</p>
-    <p>Feedback...</p>
-    <ul>
-      <li v-for="user in users" :key="user.name">
-        <a @click="changeUser(user.name)"> {{ user.name }} </a>
-      </li>
-    </ul>
+  </div>
+  <div class="footer">
+    <div id="leftImg">
+      <img src="../assets/河南师范大学.png" alt="">
+    </div>
+    <div id="rightImg">
+      <img src="../assets/logo.svg" alt="">
+    </div>
   </div>
 </template>
 
@@ -79,13 +68,136 @@ export default {
 </script>
 
 <style scoped>
+*{
+  margin: 0;
+  padding: 0;
+}
+#logo {
+  margin-bottom: 10%;
+  width: 80%;
+  margin-left: 10%;
+}
+
+#rightImg {
+  /* background-color: blue; */
+  /* height: 80%; */
+  width: 10%;
+  float: right;
+  background-color: white;
+}
+
+#leftImg {
+  /* background-color: black; */
+  /* height: 80%; */
+  width: 10%;
+  float: left;
+  background-color: white;
+}
+
+#leftImg img {
+  width: 100%;
+  /* opacity: 0.7; */
+}
+
+#rightImg img {
+  width: 80%;
+  float: right;
+}
+
+.top,.footer{
+  /* top: 0; */
+  background-color: rgba(146, 196, 224, 255);
+  box-sizing: border-box;
+  /* position: absolute; */
+  width: 100%;
+  height: 80px;
+}
+.top{
+  /* position: absolute; */
+  top: 0;
+}
+.footer {
+
+}
+
 .container {
-  margin-top: 10%;
+  
+  border: 1px solid black;
+  width: 23%;
+  border-radius: 60px;
+  margin: 2% auto;
 }
-.primary {
-  width: 25%;
+
+.form {
+  display: block;
+  margin: 10% auto;
 }
-#registerBtn {
+
+#username {
+  border-radius: 20px;
+  margin-bottom: 10%;
+  width: 80%;
+  height: 40px;
+  margin-left: 10%;
+  box-shadow: 0px 0px 5px grey;
+  border: 0 grey solid;
+}
+
+#password {
+  border-radius: 20px;
+  margin-bottom: 40px;
+  width: 80%;
+  height: 40px;
+  margin-left: 10%;
+  box-shadow: 0px 0px 5px grey;
+  border: 0 grey solid;
+}
+
+#loginButton {
+  border-radius: 20px;
+  margin-bottom: 10%;
+  width: 80%;
+  height: 40px;
+  background-color: rgba(146, 196, 224, 255);
+  border: 0ch white solid;
+  margin-left: 10%;
+  box-shadow: 0px 0px 5px rgba(146, 196, 224, 255);
+  color: white;
+}
+
+#registerButton {
+  border-radius: 20px;
+  /* margin-bottom: 40px; */
+  width: 60%;
+  height: 40px;
+  background-color: rgba(30, 203, 58, 255);
+  margin-left: 20%;
+  color: white;
+  font-size: 60%;
+  border: 0ch white solid;
+  box-shadow: 0px 0px 5px rgba(30, 203, 58, 255);
+}
+
+#fotgotten {
+  display: block;
   margin-left: 30%;
+  /* margin-bottom: 20px; */
+  width: 40%;
+  font-size: 30%;
+  text-align: center;
+}
+
+input {
+  margin: 0 auto;
+}
+
+.bottom {
+  /* background-color: black; */
+  width: 80%;
+  height: 2px;
+  margin-left: 10%;
+  margin-top: 10%;
+  border-top: 2px solid black;
+  margin-bottom: 10%;
 }
 </style>
